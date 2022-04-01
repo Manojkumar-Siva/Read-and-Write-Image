@@ -1,13 +1,13 @@
 # READ AND WRITE AN IMAGE
-## AIM
-To write a python program using OpenCV to do the following image manipulations.
-i) Read, display, and write an image.
-ii) Access the rows and columns in an image.
+# AIM :
+To write a python program using OpenCV to do the following image manipulations.<br/>
+i) Read, display, and write an image.<br/>
+ii) Access the rows and columns in an image.<br/>
 iii) Cut and paste a small portion of the image.
 
-## Software Required:
+# Software Required:
 Anaconda - Python 3.7
-## Algorithm:
+# Algorithm:
 ### Step1:
 Choose an image and save it as a filename.jpg
 ### Step2:
@@ -18,65 +18,83 @@ Use imshow(window_name, image) to display the image.
 Use imwrite(filename, image) to write the image.
 ### Step5:
 End the program and close the output image windows.
-## Program:
-### Developed By:
-### Register Number: 
+# Program:
+### Developed By: MANOJ KUMAR S
+### Register Number: 212221230056
 i) #To Read,display the image
 ```
   import cv2
+  color_img=cv2.imread('mycar.jpg',1)
+  cv2.imshow('mycar',color_img)
+  cv2.waitKey(0)
+  cv2.destroyAllWindows()
 
 ```
 ii) #To write the image
 ```
+import cv2
+color_img=cv2.imread('mycar.jpg',1)
+w=cv2.imwrite('gtr.jpg',color_img)
+cv2.imshow('GTR',color_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
 ```
 iii) #Find the shape of the Image
-``python3
+```
+import cv2
+color=cv2.imread('mycar.jpg',-1)
+print(color.shape)
 
 
 
 ```
 iv) #To access rows and columns
-```python3
-
+```
+import random
+for i in range (100):
+    for j in range(color.shape[1]):
+        color[i][j]=[random.randint(0,255),random.randint(0,0),random.randint(0,0)]
+        ##color[i][j]=[255,0,0]
+cv2.imshow('gtr',color)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 ```
 v) #To cut and paste portion of image
-```python3
-
-
+```
+import cv2
+color=cv2.imread('mycar.jpg',-1)
+tag=color[200:300,200:300]
+color[100:200,100:200]=tag
+cv2.imshow('Gtr',color)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 ```
 
-## Output:
+# Output:
 
-### i) Read and display the image
+### i) Read and display the image 
 
-<br>
-<br>
+![](./ot1.jpeg)
 
-### ii)Write the image
+### ii) Write the image
+![](./ot2.jpeg)
 
-<br>
-<br>
+### iii) Shape of the Image
+![](./ot3.jpeg)
 
-### iii)Shape of the Image
+### iv) Access rows and columns
+![](./ot4.jpeg)
 
-<br>
-<br>
+### v) Cut and paste portion of image
+![](./ot5.jpeg)
 
-### iv)Access rows and columns
-<br>
-<br>
-
-### v)Cut and paste portion of image
-<br>
-<br>
-
-## Result:
+# Result:
 Thus the images are read, displayed, and written successfully using the python program.
 
 
